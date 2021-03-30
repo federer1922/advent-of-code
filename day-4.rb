@@ -4,11 +4,11 @@ passports = data.split("\n\n")
 
 must_have = ["ecl", "pid", "eyr", "hcl", "byr", "iyr", "hgt"]
 
-valid_passwords = []
+valid_passports = []
 passports.each do |passport|
   if must_have.all? { |field| passport.include? field } 
-  valid_passwords << passport
+  valid_passports << passport
   end
 end
 
-puts "Part one answer: #{ valid_passwords.count }" 
+puts "Part one answer: #{ valid_passports.count }" 
