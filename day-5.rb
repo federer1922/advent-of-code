@@ -17,7 +17,7 @@ data.each do |seats|
   column_max = 7
   seats.split("").each do |seat|
     row = (row_min + row_max) / 2 
-    column = (column_min+ column_max) / 2
+    column = (column_min + column_max) / 2
     
     if seat == "F"
       row_max = row
@@ -28,7 +28,7 @@ data.each do |seats|
     elsif seat == "R"
       column_min = column + 1
       
-    end    
+    end     
   end
 
   row_number = row_max
