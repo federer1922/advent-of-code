@@ -42,3 +42,9 @@ data.each do |seats|
 end
 
 puts "Part one answer: #{ seats_id.max }"
+
+# Part two
+
+id = seats_id.find { |id| seats_id.include?(id) && seats_id.include?(id + 2) && !seats_id.include?(id + 1) } + 1
+
+puts "Part two answer: #{ id }"
