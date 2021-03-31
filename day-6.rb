@@ -11,6 +11,23 @@ groups.each do |group|
   group_counts << letters_uniq.count
 end
 
- sum_of_counts = group_counts.reduce(:+)
+sum_of_counts = group_counts.reduce(:+)
 
- puts "Part one answer: #{ sum_of_counts }"
+puts "Part one answer: #{ sum_of_counts }"
+
+# Part two
+
+sum_everyone_yes = 0
+
+groups.map do |group|
+  letters_uniq = group.tr("\n", "").chars.uniq
+  letters_uniq
+  letters_uniq.count do |char|
+    if group.split("\n").all? { |person| person.include?(char) } == true
+      sum_everyone_yes = sum_everyone_yes + 1
+    end
+  end
+end
+
+puts "Part two answer: #{ sum_everyone_yes }"
+
