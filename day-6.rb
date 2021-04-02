@@ -23,7 +23,7 @@ groups.map do |group|
   letters_uniq = group.tr("\n", "").chars.uniq
   letters_uniq
   letters_uniq.count do |char|
-    if group.split("\n").all? { |person| person.include?(char) } == true
+    if group.split("\n").all? { |person| person.include?(char) }
       sum_everyone_yes = sum_everyone_yes + 1
     end
   end
