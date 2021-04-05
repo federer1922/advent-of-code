@@ -7,15 +7,37 @@ File.readlines("data_9.txt").each do |line|
 end
 
 min, max = 0, 24
-
+invalid_number = nil
 loop do
   preamble = data[min..max]
   if preamble.uniq.combination(2).find { |first_number, second_number| first_number + second_number == data[max +1] }
     min = min + 1
     max = max +1
   else
-    puts "Part one answer: #{ data[max +1] }"
+    invalid_number = data[max + 1]
     break
   end
 end
+puts "Part one answer: #{ invalid_number }"
+
+# Part two
+
+min_range = 0
+max_range = 1
+
+data.size.times do |min_range|
+  max_range = min_range + 1
+  range_sum = 0
+  while range_sum < invalid_number
+    range = data[min_range..max_range]
+    range_sum = range.reduce(:+)
+
+    if range_sum == invalid_number
+      puts "Part two answer: #{ range.minmax.reduce(:+) }"
+      return
+    end
+    max_range = max_range + 1
+  end
+end
+
 
