@@ -22,9 +22,6 @@ puts "Part one answer: #{ invalid_number }"
 
 # Part two
 
-min_range = 0
-max_range = 1
-
 data.size.times do |min_range|
   max_range = min_range + 1
   range_sum = 0

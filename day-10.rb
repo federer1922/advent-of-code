@@ -1,3 +1,5 @@
+# Part one
+
 data = []
 
 File.readlines("data_10.txt").each do |line|
@@ -21,6 +23,19 @@ data.each_cons(2) do |first_number, second_number|
 end
 
 puts "Part one answer: #{ differences_1.length * differences_3.length }"
- 
+
+# Part two
+
+joltage = {}
+joltage.default = 0
+joltage[0] = 1
+
+data.each do |number|
+  3.times do |jolt|
+    joltage[number] += joltage[number - jolt - 1]
+  end
+end
+
+puts "Part two answer: #{ joltage.values.max }"
 
 
