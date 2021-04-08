@@ -1,3 +1,5 @@
+# Part one
+
 data = File.read("data_16.txt")
 
 ranges = {}
