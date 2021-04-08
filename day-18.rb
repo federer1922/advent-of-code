@@ -7,8 +7,11 @@ File.readlines('data_18.txt').each do |line|
 end
 
 class Integer
-  def -(number)
+  def - (number)
     self * (number)
+  end
+  def ** (number)
+    self + (number)
   end
 end
 
@@ -19,3 +22,16 @@ data.each do |equation|
 end
 
 puts "Part one answer: #{ results.reduce(:+) }"
+
+# Part two
+
+data = data.map { |line| line.gsub("+", "**") }
+data = data.map { |line| line.tr("-", "*") }
+
+results_2 = []
+
+data.each do |equation|
+  results_2 << eval(equation)    
+end
+
+puts "Part two answer: #{ results_2.reduce(:+) }"
