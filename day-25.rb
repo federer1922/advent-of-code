@@ -28,7 +28,7 @@ def encryption_key (public_key, loop_size)
     key = (key * public_key) % 20201227
   end
   key
-  end
+end
 
-  key = encryption_key(card_key, door_key_loop_size)
-  puts "Part one answer: #{ key }" 
+key = encryption_key(card_key, door_key_loop_size)
+puts "Part one answer: #{ key }" 
