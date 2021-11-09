@@ -7,7 +7,7 @@ number = 1
 md5 = Digest::MD5.new
 md5 << key
 
-until md5.hexdigest.start_with?('00000') do 
+while true
   md5 << number.to_s
 
   break if md5.hexdigest.start_with?('00000')
@@ -24,7 +24,7 @@ number = 1
 md5.reset 
 md5 << key
 
-until md5.hexdigest.start_with?('000000') do 
+while true
   md5 << number.to_s
   
   break if md5.hexdigest.start_with?('000000')
