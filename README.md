@@ -1,7 +1,8 @@
-## Advent of Code
+# Advent of Code
 
-# answers
+## Answers
 
-ruby day-x.rb
+cd year
+ruby day_x.rb
 
 
