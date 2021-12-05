@@ -1,5 +1,4 @@
 # Part one
-require 'pry'
 
 rows = []
 File.readlines('day_03.txt').each do |line|
@@ -23,6 +22,8 @@ end
 power_consumption = gamma_rate.to_i(2) * epsilon_rate.to_i(2)
 
 puts "Part one answer: #{ power_consumption }"
+
+# Patr two
 
 number = 0
 oxygen_generator = rows.transpose
