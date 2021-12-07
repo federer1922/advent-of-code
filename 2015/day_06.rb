@@ -17,14 +17,14 @@ instructions.each do |instruction|
   (x_1..x_2).each do |x|
     (y_1..y_2).each do |y|
       if command == "turn on"
-        grid[x][y] = true
+        grid[y][x] = true
       elsif command == "turn off"
-        grid[x][y] = false
+        grid[y][x] = false
       else
-        if grid[x][y] == false
-          grid[x][y] = true
+        if grid[y][x] == false
+          grid[y][x] = true
         else
-          grid[x][y] = false
+          grid[y][x] = false
         end
       end
     end
@@ -46,13 +46,13 @@ instructions.each do |instruction|
   (x_1..x_2).each do |x|
     (y_1..y_2).each do |y|
       if command == "turn on"
-        grid[x][y] += 1
+        grid[y][x] += 1
       elsif command == "turn off"
-        if grid[x][y] > 0
-          grid[x][y] -= 1
+        if grid[y][x] > 0
+          grid[y][x] -= 1
         end
       else
-        grid[x][y] += 2
+        grid[y][x] += 2
       end
     end
   end
