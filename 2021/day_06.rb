@@ -1,7 +1,5 @@
 # Part one
 
-require 'pry'
-
 data = File.read('day_06.txt').split(',').map(&:to_i)
 
 def initial_state(input)
