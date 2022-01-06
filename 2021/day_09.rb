@@ -10,10 +10,9 @@ def compare(values, number)
   values.all? { _1 > number }
 end
 
-
 def get_adjacent(numbers, x, y)
-  x_max = numbers.size - 1
-  y_max = numbers[0].size - 1
+  x_max = numbers[0].size - 1
+  y_max = numbers.size - 1
 
   adjacent = [
     [x + 1, y],
@@ -30,18 +29,18 @@ def get_adjacent(numbers, x, y)
 end
 
 def get_low_points(numbers, part_one = true)
-  x_max = numbers.size - 1
-  y_max = numbers[0].size - 1
+  x_max = numbers[0].size - 1
+  y_max = numbers.size - 1
   low_points = []
 
   (0..x_max).each do |x|
     (0..y_max).each do |y|
       values = []
-      number = numbers[x][y]
+      number = numbers[y][x]
 
       adjacent = get_adjacent(numbers, x, y)
       adjacent.each do |x_1, y_1|
-        values << numbers[x_1][y_1]
+        values << numbers[y_1][x_1]
       end
       
       if compare(values, number)
@@ -82,7 +81,7 @@ def get_basin_sizes(numbers, low_points)
       x, y = next_point
       adjacent = get_adjacent(numbers, x, y)
       adjacent.each do |x_1, y_1|
-        if numbers[x_1][y_1] < 9 && basin.none?([x_1, y_1])
+        if numbers[y_1][x_1] < 9 && basin.none?([x_1, y_1])
           basin << [x_1, y_1]
           next_points << [x_1, y_1]
         end
